@@ -1,6 +1,7 @@
 // Imports
 import React, { useEffect, useState } from "react";
 import data from "./api";
+import MovieRow from "./components/MovieRow";
 
 // Component
 const App = () => {
@@ -21,16 +22,20 @@ const App = () => {
   return (
     <div className="page">
       {/* Header */}
-      <div className="header"></div>
+      <section className="header"></section>
 
       {/* Featured movie */}
-      <div className="featured"></div>
+      <section className="featured"></section>
 
       {/* Lists of movies */}
-      <div className="lists"></div>
+      <section className="lists">
+        {movieList.map((item, key) => {
+          return <MovieRow />;
+        })}
+      </section>
 
       {/* Footer */}
-      <div className="footer"></div>
+      <section className="footer"></section>
     </div>
   );
 };
