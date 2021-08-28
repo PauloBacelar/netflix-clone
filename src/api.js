@@ -23,46 +23,46 @@ const data = {
       {
         camel: "trending",
         title: "Trending",
-        items: await fetchData(`/trending/all/week&api_key=${API_KEY}`),
+        items: await fetchData(`/trending/all/week?api_key=${API_KEY}`),
       },
       {
         camel: "topRated",
         title: "Top Rated",
-        items: await fetchData(`/movie/top_rated&api_key=${API_KEY}`),
+        items: await fetchData(`/movie/top_rated?api_key=${API_KEY}`),
       },
       {
         camel: "action",
         title: "Action",
         items: await fetchData(
-          `/discover/movie/with?with_genres=28&api_key=${API_KEY}`
+          `/discover/movie?with_genres=28&api_key=${API_KEY}`
         ),
       },
       {
         camel: "comedy",
         title: "Comedy",
         items: await fetchData(
-          `/discover/movie/with?with_genres=35&api_key=${API_KEY}`
+          `/discover/movie?with_genres=35&api_key=${API_KEY}`
         ),
       },
       {
         camel: "horror",
         title: "Horror",
         items: await fetchData(
-          `/discover/movie/with?with_genres=27&api_key=${API_KEY}`
+          `/discover/movie?with_genres=27&api_key=${API_KEY}`
         ),
       },
       {
         camel: "romance",
         title: "Romance",
         items: await fetchData(
-          `/discover/movie/with?with_genres=10749&api_key=${API_KEY}`
+          `/discover/movie?with_genres=10749&api_key=${API_KEY}`
         ),
       },
       {
         camel: "documentary",
         title: "Documentaries",
         items: await fetchData(
-          `/discover/movie/with?with_genres=99&api_key=${API_KEY}`
+          `/discover/movie?with_genres=99&api_key=${API_KEY}`
         ),
       },
     ];
