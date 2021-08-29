@@ -23,6 +23,8 @@ body {
   bottom: 0;
   right: 0;
   overflow: hidden;
+  background-image: url("./images/loading.gif");
+  background-size: cover;
 }
 
 .loading img {

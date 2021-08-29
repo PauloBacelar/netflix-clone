@@ -75,9 +75,7 @@ const App = () => {
       <section className="footer"></section>
 
       {movieList.length === 0 || !featuredMovie ? (
-        <div className="loading">
-          <img src={loadingScreen} alt="Loading screen" />
-        </div>
+        <div className="loading"></div>
       ) : (
         ""
       )}
