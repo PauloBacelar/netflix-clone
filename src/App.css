@@ -15,3 +15,16 @@ body {
 .lists {
   margin-top: -150px;
 }
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.loading img {
+  width: 100%;
+}

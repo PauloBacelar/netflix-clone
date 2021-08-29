@@ -5,6 +5,7 @@ import data from "./api";
 import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
+import loadingScreen from "./images/loading.gif";
 
 // Component
 const App = () => {
@@ -72,6 +73,14 @@ const App = () => {
 
       {/* Footer */}
       <section className="footer"></section>
+
+      {movieList.length === 0 || !featuredMovie ? (
+        <div className="loading">
+          <img src={loadingScreen} alt="Loading screen" />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
