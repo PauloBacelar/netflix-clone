@@ -67,6 +67,19 @@ const data = {
       },
     ];
   },
+  getMovieInfo: async (movieId, type) => {
+    let movieInfo;
+
+    if (movieId) {
+      if (type === "movie") {
+        movieInfo = await fetchData(`/movie/${movieId}?api_key=${API_KEY}`);
+      } else if (type === "tv") {
+        movieInfo = await fetchData(`/tv/${movieId}?api_key=${API_KEY}`);
+      }
+    }
+
+    return movieInfo;
+  },
 };
 
 export default data;
