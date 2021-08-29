@@ -1,4 +1,5 @@
 // Imports
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import data from "./api";
 import MovieRow from "./components/MovieRow";
@@ -29,8 +30,8 @@ const App = () => {
 
       {/* Lists of movies */}
       <section className="lists">
-        {movieList.map((item, key) => {
-          return <MovieRow />;
+        {movieList.map((list, key) => {
+          return <MovieRow key={key} title={list.title} list={list.items} />;
         })}
       </section>
 
