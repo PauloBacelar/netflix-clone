@@ -39,13 +39,11 @@ const App = () => {
       <section className="header"></section>
 
       {/* Featured movie */}
-      <section className="featured">
-        {featuredMovie ? (
-          <FeaturedMovie featuredData={featuredMovie} />
-        ) : (
-          "Loading"
-        )}
-      </section>
+      {featuredMovie ? (
+        <FeaturedMovie featuredData={featuredMovie} />
+      ) : (
+        "Loading"
+      )}
 
       {/* Lists of movies */}
       <section className="lists">

@@ -2,7 +2,21 @@
 import "./FeaturedMovie.css";
 
 const FeaturedMovie = (props) => {
-  return <div>{props.featuredData.name}</div>;
+  console.log(props.featuredData.backdrop_path);
+  return (
+    <section
+      className="featured"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${props.featuredData.backdrop_path})`,
+      }}
+    >
+      <div className="featured__vertical">
+        <div className="featured__horizontal"></div>
+      </div>
+    </section>
+  );
 };
 
 export default FeaturedMovie;
