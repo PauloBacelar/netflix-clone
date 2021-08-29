@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import data from "./api";
 import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
+import Header from "./components/Header";
 
 // Component
 const App = () => {
@@ -36,7 +37,7 @@ const App = () => {
   return (
     <div className="page">
       {/* Header */}
-      <section className="header"></section>
+      <Header />
 
       {/* Featured movie */}
       {featuredMovie ? (
