@@ -61,3 +61,10 @@
 .movieRow:hover .movieRow__right {
   opacity: 1;
 }
+
+@media (max-width: 1024px) {
+  .movieRow__left,
+  .movieRow__right {
+    opacity: 1;
+  }
+}
