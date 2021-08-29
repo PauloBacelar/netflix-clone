@@ -12,4 +12,73 @@
   width: inherit;
   height: inherit;
   background: linear-gradient(to right, #111 30%, transparent 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 0 150px 30px;
+}
+
+.featured__name {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.featured__info {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.featured__rating,
+.featured__seasons,
+.featured__year {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.featured__rating {
+  color: #46d369;
+}
+
+.featured__description {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #999;
+  max-width: 40%;
+}
+
+.featured__buttons {
+  margin-top: 15px;
+}
+
+.featured__buttons--red,
+.featured__buttons--black {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 35px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+  color: #fff;
+  opacity: 1;
+  transition: all ease 0.2s;
+}
+
+.featured__buttons--red:hover,
+.featured__buttons--black:hover {
+  opacity: 0.75;
+}
+
+.featured__buttons--red {
+  background-color: #d23a26;
+}
+
+.featured__buttons--black {
+  background-color: #333;
+}
+
+.featured__genres {
+  margin-top: 15px;
+  font-size: 18px;
 }
