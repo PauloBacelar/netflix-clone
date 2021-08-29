@@ -1,12 +1,8 @@
 // Imports
 import "./FeaturedMovie.css";
 
-const FeaturedMovie = () => {
-  return (
-    <div>
-      <h1>Featured Movie here</h1>
-    </div>
-  );
+const FeaturedMovie = (props) => {
+  return <div>{props.featuredData.name}</div>;
 };
 
 export default FeaturedMovie;

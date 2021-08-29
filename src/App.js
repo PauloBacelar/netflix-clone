@@ -14,24 +14,23 @@ const App = () => {
   // Methods
   useEffect(() => {
     const loadData = async () => {
-      // List of movies
       let movieList = await data.getHomeList();
       setMovieList(movieList);
 
-      // Featured movie
-      let netflixOriginals = movieList.filter(
-        (type) => type.camel === "originals"
-      );
-      let randomNumber = Math.floor(
-        Math.random() * netflixOriginals[0].items.results.length - 1
-      );
-      let chosenFeatured = netflixOriginals[0].items.results[randomNumber];
-      let chosenInfo = await data.getMovieInfo(chosenFeatured.id, "tv");
+      let originals = movieList.filter((i) => i.camel === "originals");
+      let chosen = getRandomItem(originals[0].items.results);
+      let chosenInfo = await data.getMovieInfo(chosen.id, "tv");
       setFeaturedMovie(chosenInfo);
     };
 
     loadData();
   }, []);
+
+  const getRandomItem = (arr) => {
+    let rand = Math.floor(Math.random() * arr.length);
+    let x = arr[rand];
+    return x;
+  };
 
   // JSX
   return (
@@ -41,7 +40,11 @@ const App = () => {
 
       {/* Featured movie */}
       <section className="featured">
-        {featuredMovie && <FeaturedMovie featuredData={featuredMovie} />}
+        {featuredMovie ? (
+          <FeaturedMovie featuredData={featuredMovie} />
+        ) : (
+          "Loading"
+        )}
       </section>
 
       {/* Lists of movies */}
