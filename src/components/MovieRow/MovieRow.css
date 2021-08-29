@@ -11,10 +11,6 @@
   padding-left: 30px;
 }
 
-.movieRow__list {
-  width: 999999999px;
-}
-
 .movieRow__movie {
   display: inline-block;
   width: 150px;
@@ -31,4 +27,37 @@
 .movieRow__movie img:hover {
   transform: scale(1);
   cursor: pointer;
+}
+
+.movieRow__list {
+  transition: all ease 0.5s;
+}
+
+.movieRow__left,
+.movieRow__right {
+  position: absolute;
+  width: 40px;
+  height: 225px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.movieRow__left {
+  left: 0;
+}
+
+.movieRow__right {
+  right: 0;
+}
+
+.movieRow:hover .movieRow__left,
+.movieRow:hover .movieRow__right {
+  opacity: 1;
 }
