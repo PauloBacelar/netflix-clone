@@ -7,12 +7,10 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 // Component
 const MovieRow = ({ title, list }) => {
   // Hooks
-  const [movieList, setMovieList] = useState(list);
   const [scrollX, setScrollX] = useState(-400);
 
   // Methods
   useEffect(() => {
-    console.log(movieList.results);
     const shuffleList = (unshuffledList) => {
       for (let i = unshuffledList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -26,7 +24,7 @@ const MovieRow = ({ title, list }) => {
       return unshuffledList;
     };
 
-    setMovieList(shuffleList(movieList.results));
+    list.results = shuffleList(list.results);
   }, []);
 
   const handleLeftArrow = () => {

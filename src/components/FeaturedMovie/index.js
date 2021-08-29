@@ -5,9 +5,9 @@ const FeaturedMovie = (props) => {
   const releaseDate = new Date(props.featuredData.first_air_date);
   const genres = [];
 
-  props.featuredData.genres.map((genre) => {
+  for (let genre of props.featuredData.genres) {
     genres.push(genre.name);
-  });
+  }
 
   let description = props.featuredData.overview;
   if (description.length >= 200) {

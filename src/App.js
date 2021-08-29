@@ -5,7 +5,6 @@ import data from "./api";
 import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
-import loadingScreen from "./images/loading.gif";
 
 // Component
 const App = () => {

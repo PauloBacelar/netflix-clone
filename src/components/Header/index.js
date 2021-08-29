@@ -11,7 +11,7 @@ const Header = ({ black }) => {
         </a>
       </div>
       <div className="header__user">
-        <a href="#">
+        <a href="/#">
           <img src={userImg} alt="User icon" />
         </a>
       </div>
