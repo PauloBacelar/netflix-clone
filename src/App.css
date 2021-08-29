@@ -30,3 +30,9 @@ body {
 .loading img {
   width: 100%;
 }
+
+@media screen and (max-height: 700px) {
+  .lists {
+    margin-top: -100px;
+  }
+}
