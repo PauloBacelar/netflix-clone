@@ -11,6 +11,7 @@ const App = () => {
   // Hooks
   const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   // Methods
   useEffect(() => {
@@ -27,6 +28,22 @@ const App = () => {
     loadData();
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollListener);
+
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []);
+
   const getRandomItem = (arr) => {
     let rand = Math.floor(Math.random() * arr.length);
     let x = arr[rand];
@@ -37,7 +54,7 @@ const App = () => {
   return (
     <div className="page">
       {/* Header */}
-      <Header />
+      <Header black={blackHeader} />
 
       {/* Featured movie */}
       {featuredMovie ? (
