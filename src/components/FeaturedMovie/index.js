@@ -25,7 +25,9 @@ const FeaturedMovie = (props) => {
           </div>
           <div className="featured__info">
             <div className="featured__rating">
-              Match {Math.round(props.featuredData.vote_average * 10)}%
+              {props.featuredData.vote_average
+                ? Math.round(props.featuredData.vote_average * 10) + "% Match"
+                : ""}
             </div>
             <div className="featured__year">{releaseDate.getFullYear()}</div>
             <div className="featured__seasons">
@@ -37,10 +39,20 @@ const FeaturedMovie = (props) => {
             {props.featuredData.overview}
           </div>
           <div className="featured__buttons">
-            <a href={`/watch/${props.featuredData.id}`}>▶ Play</a>
-            <a href={`/list/add/${props.featuredData.id}`}>+ My list</a>
+            <a
+              href={`/watch/${props.featuredData.id}`}
+              className="featured__buttons--red"
+            >
+              ▶&nbsp;&nbsp;Play
+            </a>
+            <a
+              href={`/list/add/${props.featuredData.id}`}
+              className="featured__buttons--black"
+            >
+              + My list
+            </a>
           </div>
-          <div className="featured__genre">
+          <div className="featured__genres">
             <strong>Genres: </strong> {genres.join(", ")}
           </div>
         </div>
