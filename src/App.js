@@ -17,6 +17,8 @@ const App = () => {
   const [modalMovieId, setModalMovieId] = useState(null);
   const [modalMovieInfo, setModalMovieInfo] = useState([]);
 
+  console.log(modalMovieId);
+
   // Methods
   useEffect(() => {
     const loadData = async () => {

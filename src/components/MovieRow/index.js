@@ -83,7 +83,11 @@ const MovieRow = ({
                     alt={movie.original_title}
                     onClick={() => {
                       showMovieInfo(!modalIsOn);
-                      getModalMovieInfo(movie.id);
+                      if (title !== "Netflix Originals") {
+                        getModalMovieInfo([movie.id, "movie"]);
+                      } else {
+                        getModalMovieInfo([movie.id, "tv"]);
+                      }
                     }}
                     style={modalIsOn ? { opacity: 0.7 } : null}
                   />
