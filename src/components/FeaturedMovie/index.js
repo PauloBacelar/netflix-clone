@@ -46,13 +46,13 @@ const FeaturedMovie = (props) => {
               href={`/watch/${props.featuredData.id}`}
               className="featured__buttons--red"
             >
-              ▶&nbsp;&nbsp;Play
+              Play
             </a>
             <a
               href={`/list/add/${props.featuredData.id}`}
               className="featured__buttons--black"
             >
-              + My list
+              +&nbsp;&nbsp;My list
             </a>
           </div>
           <div className="featured__genres">

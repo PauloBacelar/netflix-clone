@@ -8,6 +8,7 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 const MovieRow = ({ title, list }) => {
   // Hooks
   const [scrollX, setScrollX] = useState(-400);
+  const [showModal, setShowModal] = useState(false);
 
   // Methods
   useEffect(() => {
@@ -47,6 +48,10 @@ const MovieRow = ({ title, list }) => {
 
     setScrollX(x);
   };
+
+  const showMovieInfo = () => {
+    setShowModal(true);
+  }
 
   // JSX
   return (
