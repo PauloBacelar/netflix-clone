@@ -55,7 +55,8 @@ const App = () => {
           modalMovieId[0],
           modalMovieId[1]
         );
-        console.log(modalInfo);
+
+        setModalMovieInfo(modalInfo);
       }
 
       getModalInfo();
@@ -71,18 +72,15 @@ const App = () => {
   // JSX
   return (
     <div className="page">
-      {modal ? <Modal /> : null}
-
+      {modal && modalMovieInfo ? <Modal modalInfo={modalMovieInfo} /> : null}
       {/* Header */}
       <Header black={blackHeader} />
-
       {/* Featured movie */}
       {featuredMovie ? (
         <FeaturedMovie featuredData={featuredMovie} />
       ) : (
         "Loading"
       )}
-
       {/* Lists of movies */}
       <section className="lists">
         {movieList.map((list, key) => {
@@ -98,10 +96,8 @@ const App = () => {
           );
         })}
       </section>
-
       {/* Footer */}
       <section className="footer"></section>
-
       {movieList.length === 0 || !featuredMovie ? (
         <div className="loading"></div>
       ) : (
