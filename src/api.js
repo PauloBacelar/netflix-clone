@@ -21,11 +21,6 @@ const data = {
         ),
       },
       {
-        camel: "trending",
-        title: "Trending",
-        items: await fetchData(`/trending/all/week?api_key=${API_KEY}`),
-      },
-      {
         camel: "topRated",
         title: "Top Rated",
         items: await fetchData(`/movie/top_rated?api_key=${API_KEY}`),
