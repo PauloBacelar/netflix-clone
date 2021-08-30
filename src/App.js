@@ -5,6 +5,7 @@ import data from "./api";
 import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 
 // Component
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
+  const [modal, setModal] = useState(false);
 
   // Methods
   useEffect(() => {
@@ -53,6 +55,8 @@ const App = () => {
   // JSX
   return (
     <div className="page">
+      {modal ? <Modal /> : null}
+
       {/* Header */}
       <Header black={blackHeader} />
 
@@ -66,7 +70,15 @@ const App = () => {
       {/* Lists of movies */}
       <section className="lists">
         {movieList.map((list, key) => {
-          return <MovieRow key={key} title={list.title} list={list.items} />;
+          return (
+            <MovieRow
+              key={key}
+              title={list.title}
+              list={list.items}
+              showMovieInfo={setModal}
+              modalIsOn={modal}
+            />
+          );
         })}
       </section>
 
