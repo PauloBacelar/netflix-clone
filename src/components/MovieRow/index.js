@@ -39,7 +39,7 @@ const MovieRow = ({ title, list }) => {
 
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2);
-    let listW = list.results.length * 150;
+    let listW = list.results.length * 200;
 
     if (window.innerWidth - listW > x) {
       x = window.innerWidth - listW - 60;
@@ -65,7 +65,7 @@ const MovieRow = ({ title, list }) => {
           className="movieRow__list"
           style={{
             marginLeft: scrollX,
-            width: list.results.length * 150,
+            width: list.results.length * 200,
           }}
         >
           {list.results.length > 0 &&
