@@ -17,8 +17,6 @@ const App = () => {
   const [modalMovieId, setModalMovieId] = useState(null);
   const [modalMovieInfo, setModalMovieInfo] = useState([]);
 
-  console.log(modalMovieId);
-
   // Methods
   useEffect(() => {
     const loadData = async () => {
@@ -49,6 +47,20 @@ const App = () => {
       window.removeEventListener("scroll", scrollListener);
     };
   }, []);
+
+  useEffect(() => {
+    if (modalMovieId) {
+      async function getModalInfo() {
+        let modalInfo = await data.getMovieInfo(
+          modalMovieId[0],
+          modalMovieId[1]
+        );
+        console.log(modalInfo);
+      }
+
+      getModalInfo();
+    }
+  }, [modalMovieId]);
 
   const getRandomItem = (arr) => {
     let rand = Math.floor(Math.random() * arr.length);
