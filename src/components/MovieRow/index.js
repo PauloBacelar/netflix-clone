@@ -3,10 +3,16 @@ import "./MovieRow.css";
 import { useState, useEffect } from "react";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
-import Modal from "../Modal";
+import data from "../../api";
 
 // Component
-const MovieRow = ({ title, list, showMovieInfo, modalIsOn }) => {
+const MovieRow = ({
+  title,
+  list,
+  showMovieInfo,
+  modalIsOn,
+  getModalMovieInfo,
+}) => {
   // Hooks
   const [scrollX, setScrollX] = useState(-400);
 
@@ -76,7 +82,11 @@ const MovieRow = ({ title, list, showMovieInfo, modalIsOn }) => {
                   <img
                     src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                     alt={movie.original_title}
-                    onClick={() => showMovieInfo(!modalIsOn)}
+                    onClick={() => {
+                      showMovieInfo(!modalIsOn);
+                      getModalMovieInfo(movie.id);
+                    }}
+                    style={modalIsOn ? { opacity: 0.7 } : null}
                   />
                 </div>
               );

@@ -3,4 +3,5 @@
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
+  transition: all ease 0.5s;
 }

@@ -14,6 +14,9 @@ const App = () => {
   const [featuredMovie, setFeaturedMovie] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
   const [modal, setModal] = useState(false);
+  const [modalMovie, setModalMovie] = useState([]);
+
+  console.log(modalMovie);
 
   // Methods
   useEffect(() => {
@@ -77,6 +80,7 @@ const App = () => {
               list={list.items}
               showMovieInfo={setModal}
               modalIsOn={modal}
+              getModalMovieInfo={setModalMovie}
             />
           );
         })}
