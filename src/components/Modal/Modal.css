@@ -1,10 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+
 .modal {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   transition: all ease 0.5s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 99999;
+}
+
+.modal__card {
+  background-color: #181818;
+  color: #fff;
+  max-width: 880px;
+  width: 90%;
+  height: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  margin-top: 50px;
+  overflow-y: auto;
+}
+
+.modal__image {
+  width: 100%;
+  height: 75%;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.modal__title-container {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 48px;
+  font-family: "New Tegomin", serif;
 }
