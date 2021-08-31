@@ -72,7 +72,9 @@ const App = () => {
   // JSX
   return (
     <div className="page">
-      {modal && modalMovieInfo ? <Modal modalInfo={modalMovieInfo} /> : null}
+      {modal && modalMovieInfo ? (
+        <Modal modalInfo={modalMovieInfo} showType={modalMovieId[1]} />
+      ) : null}
       {/* Header */}
       <Header black={blackHeader} />
       {/* Featured movie */}

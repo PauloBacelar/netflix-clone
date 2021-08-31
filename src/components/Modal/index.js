@@ -1,11 +1,14 @@
 import "./Modal.css";
 
 const Modal = (props) => {
-  console.log(props.modalInfo);
-
+  console.log(props);
   return (
     <div className="modal">
-      <div className="modal__info">{props.modalInfo.name}</div>
+      {props.showType === "tv" ? (
+        <div className="modal__info">{props.modalInfo.name}</div>
+      ) : (
+        <div className="modal__info">{props.modalInfo.title}</div>
+      )}
     </div>
   );
 };
