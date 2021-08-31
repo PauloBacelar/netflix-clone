@@ -7,6 +7,7 @@
   position: fixed;
   transition: all ease 0.5s;
   z-index: 99999;
+  overflow-y: scroll;
 }
 
 .modal__card {
@@ -14,19 +15,22 @@
   color: #fff;
   max-width: 880px;
   width: 90%;
-  height: 100vh;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  margin-top: 50px;
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .modal__image {
   width: 100%;
-  height: 75%;
+  height: 70vh;
+  max-height: 460px;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   position: relative;
+  border-radius: 10px;
 }
 
 .modal__title-container {
@@ -48,11 +52,56 @@
   padding: 12px 35px;
   border-radius: 5px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   transition: all ease 0.2s;
-  background-color: #f00;
+  background-color: #fff;
 }
 
 .modal__button:hover {
-  background-color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.modal__rating {
+  color: #65d45c;
+}
+
+.modal__details {
+  margin-left: 35px;
+  margin-top: 10px;
+}
+
+.modal__details h3 {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.modal__info {
+  width: 100%;
+  height: 40%;
+}
+
+.modal__year,
+.modal__seasons {
+  font-weight: 400;
+}
+
+.modal__description-container {
+  display: flex;
+}
+
+.modal__description {
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 90%;
+}
+
+.modal__description p {
+  line-height: 30px;
+  margin-top: 0;
+  margin-right: 30px;
+}
+
+.modal__no-description {
+  color: #ddd;
+  font-style: italic;
 }
