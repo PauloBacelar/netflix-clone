@@ -105,3 +105,31 @@
   color: #ddd;
   font-style: italic;
 }
+
+.modal__close {
+  background-color: #262121;
+  display: inline;
+  border-radius: 100%;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.modal__close:hover {
+  background-color: #626262;
+  display: inline;
+  border-radius: 100%;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.modal__close-btn {
+  font-size: 14px;
+  font-family: "Arial";
+  font-weight: 300;
+  padding: 4px;
+}

@@ -1,6 +1,7 @@
 import "./Modal.css";
 
 const Modal = (props) => {
+  console.log(props);
   let genres = [];
   if (props.modalInfo.genres) {
     for (let genre of props.modalInfo.genres) {
@@ -11,9 +12,9 @@ const Modal = (props) => {
   }
 
   return (
-    <div className="modal" onClick={() => props.setModal(false)}>
+    <div className="modal">
       {props.showType === "tv" ? (
-        <div className="modal__card" onClick={() => props.setModal(true)}>
+        <div className="modal__card">
           <div
             className="modal__image"
             style={{
@@ -21,6 +22,9 @@ const Modal = (props) => {
                 https://image.tmdb.org/t/p/original${props.modalInfo.backdrop_path})`,
             }}
           >
+            <div className="modal__close" onClick={() => props.setModal(false)}>
+              <span className="modal__close-btn">X</span>
+            </div>
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.name}</h2>
               <a href="/#" className="modal__button">
