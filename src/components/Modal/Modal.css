@@ -19,7 +19,6 @@
   transform: translateX(-50%);
   position: absolute;
   margin-top: 50px;
-  overflow-y: auto;
 }
 
 .modal__image {
@@ -40,4 +39,20 @@
   margin: 0;
   font-size: 48px;
   font-family: "New Tegomin", serif;
+}
+
+.modal__button {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 35px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: all ease 0.2s;
+  background-color: #f00;
+}
+
+.modal__button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
 }

@@ -4,7 +4,7 @@ const Modal = (props) => {
   console.log(props.modalInfo);
 
   return (
-    <div className="modal">
+    <div className="modal" onClick={() => props.setModal(false)}>
       {props.showType === "tv" ? (
         <div className="modal__card">
           <div
@@ -16,7 +16,7 @@ const Modal = (props) => {
           >
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.name}</h2>
-              <a href="/#" className="featured__buttons--red">
+              <a href="/#" className="modal__button">
                 Play
               </a>
             </div>

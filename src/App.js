@@ -63,6 +63,19 @@ const App = () => {
     }
   }, [modalMovieId]);
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    const html = document.querySelector("html");
+
+    if (modal) {
+      body.classList.add("modal-active");
+      html.classList.add("modal-active");
+    } else {
+      body.classList.remove("modal-active");
+      html.classList.remove("modal-active");
+    }
+  }, [modal]);
+
   const getRandomItem = (arr) => {
     let rand = Math.floor(Math.random() * arr.length);
     let x = arr[rand];
@@ -73,7 +86,11 @@ const App = () => {
   return (
     <div className="page">
       {modal && modalMovieInfo ? (
-        <Modal modalInfo={modalMovieInfo} showType={modalMovieId[1]} />
+        <Modal
+          modalInfo={modalMovieInfo}
+          showType={modalMovieId[1]}
+          setModal={setModal}
+        />
       ) : null}
       {/* Header */}
       <Header black={blackHeader} />

@@ -12,6 +12,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+html.modal-active,
+body.modal-active {
+  overflow-y: hidden;
+}
+
 .lists {
   margin-top: -150px;
 }
