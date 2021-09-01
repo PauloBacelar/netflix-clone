@@ -1,7 +1,6 @@
 import "./Modal.css";
 
 const Modal = (props) => {
-  console.log(props);
   let genres = [];
   if (props.modalInfo.genres) {
     for (let genre of props.modalInfo.genres) {
@@ -66,6 +65,18 @@ const Modal = (props) => {
           </div>
           <div className="modal__related">
             <h2>Similar shows</h2>
+
+            <div className="modal__grid">
+              {props.similarTitles
+                ? props.similarTitles.results.map((title) => {
+                    return (
+                      <div className="modal__grid-item">
+                        <p>{title.name}</p>
+                      </div>
+                    );
+                  })
+                : ""}
+            </div>
           </div>
         </div>
       ) : (
@@ -102,7 +113,7 @@ const Modal = (props) => {
                   : null}
               </h3>
               <h3 className="modal__seasons">
-                {Math.round(props.modalInfo.runtime / 60)}h
+                {Math.round(props.modalInfo.runtime / 60)}h{" "}
                 {props.modalInfo.runtime % 60}min
               </h3>
             </div>
