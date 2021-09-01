@@ -26,7 +26,7 @@ const FeaturedMovie = (props) => {
       <div className="featured__vertical">
         <div className="featured__horizontal">
           <div className="featured__name">
-            {props.featuredData.original_name}
+            {props.featuredData.original_name}<i class="uis uis-minus-square-full"></i>
           </div>
           <div className="featured__info">
             <div className="featured__rating">

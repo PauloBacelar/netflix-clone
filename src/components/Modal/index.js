@@ -23,7 +23,7 @@ const Modal = (props) => {
             }}
           >
             <div className="modal__close" onClick={() => props.setModal(false)}>
-              <span className="modal__close-btn">X</span>
+              <span class="material-icons">close</span>
             </div>
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.name}</h2>
