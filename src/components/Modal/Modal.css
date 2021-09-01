@@ -150,10 +150,29 @@
   background-color: #302c2c;
 }
 
+.modal__grid-item:hover {
+  cursor: pointer;
+}
+
+.modal__grid-item:hover .modal__grid-year {
+  opacity: 1;
+}
+
 .modal__grid-img {
   height: 40%;
   width: 100%;
   border-radius: 7.5px;
+  position: relative;
+}
+
+.modal__grid-year {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  opacity: 0;
+  transition: ease 0.25s;
 }
 
 .modal__grid-info {

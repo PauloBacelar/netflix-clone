@@ -70,42 +70,47 @@ const Modal = (props) => {
               {props.similarTitles
                 ? props.similarTitles.results.map((title, key) => {
                     console.log(title);
-                    return (
-                      <div className="modal__grid-item" key={key}>
-                        <div
-                          className="modal__grid-img"
-                          style={
-                            title.backdrop_path
-                              ? {
-                                  backgroundImage: `url(https://image.tmdb.org/t/p/original${title.backdrop_path})`,
-                                  backgroundSize: "cover",
-                                  backgroundPosition: "center",
-                                }
-                              : null
-                          }
-                        ></div>
-
-                        <div className="modal__grid-info">
-                          <div className="modal__grid-title">
-                            <div className="modal__rating">
-                              <h4>
-                                {" "}
-                                {Math.round(props.modalInfo.vote_average * 10)}%
-                                match
-                              </h4>
-                            </div>
-                            <h4 className="modal__grid-name">{title.name}</h4>
-                          </div>
-                          <div className="modal__grid-description">
-                            <p>
-                              {title.overview.length > 15
-                                ? title.overview.substring(0, 140) + "..."
-                                : title.overview}
+                    if (title.backdrop_path) {
+                      return (
+                        <div className="modal__grid-item" key={key}>
+                          <div
+                            className="modal__grid-img"
+                            style={
+                              title.backdrop_path
+                                ? {
+                                    backgroundImage: `url(https://image.tmdb.org/t/p/original${title.backdrop_path})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                  }
+                                : null
+                            }
+                          >
+                            <p className="modal__grid-year">
+                              {title.first_air_date.substring(0, 4)}
                             </p>
                           </div>
+
+                          <div className="modal__grid-info">
+                            <div className="modal__grid-title">
+                              <div className="modal__rating">
+                                <h4>
+                                  {" "}
+                                  {Math.round(title.vote_average * 10)}% match
+                                </h4>
+                              </div>
+                              <h4 className="modal__grid-name">{title.name}</h4>
+                            </div>
+                            <div className="modal__grid-description">
+                              <p>
+                                {title.overview.length > 15
+                                  ? title.overview.substring(0, 140) + "..."
+                                  : title.overview}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    );
+                      );
+                    }
                   })
                 : ""}
             </div>
