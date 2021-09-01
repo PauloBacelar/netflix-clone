@@ -1,7 +1,7 @@
 import "./Modal.css";
 
 const Modal = (props) => {
-  // console.log(props);
+  console.log(props);
   let genres = [];
   if (props.modalInfo.genres) {
     for (let genre of props.modalInfo.genres) {
@@ -63,6 +63,9 @@ const Modal = (props) => {
               </p>
               <p>Genres: {genres}</p>
             </div>
+          </div>
+          <div className="modal__related">
+            <h2>Similar shows</h2>
           </div>
         </div>
       ) : (

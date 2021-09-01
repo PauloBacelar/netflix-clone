@@ -15,7 +15,8 @@ const App = () => {
   const [blackHeader, setBlackHeader] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalMovieId, setModalMovieId] = useState(null);
-  const [modalMovieInfo, setModalMovieInfo] = useState([]);
+  const [modalMovieInfo, setModalMovieInfo] = useState(null);
+  const [similarTitles, setSimilarTitles] = useState(null);
 
   // Methods
   useEffect(() => {
@@ -59,22 +60,19 @@ const App = () => {
         setModalMovieInfo(modalInfo);
       }
 
+      async function getSimilar() {
+        let similarInfo = await data.getSimilarTitles(
+          modalMovieId[0],
+          modalMovieId[1]
+        );
+
+        setSimilarTitles(similarInfo);
+      }
+
       getModalInfo();
+      getSimilar();
     }
   }, [modalMovieId]);
-
-  useEffect(() => {
-    const body = document.querySelector("body");
-    const html = document.querySelector("html");
-
-    if (modal) {
-      body.classList.add("modal-active");
-      html.classList.add("modal-active");
-    } else {
-      body.classList.remove("modal-active");
-      html.classList.remove("modal-active");
-    }
-  }, [modal]);
 
   const getRandomItem = (arr) => {
     let rand = Math.floor(Math.random() * arr.length);
@@ -90,6 +88,7 @@ const App = () => {
           modalInfo={modalMovieInfo}
           showType={modalMovieId[1]}
           setModal={setModal}
+          similarTitles={similarTitles}
         />
       ) : null}
       {/* Header */}

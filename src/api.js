@@ -3,8 +3,7 @@ const API_KEY = "0bc68895ea9f1032d90f48de9946e3cf";
 const API_BASE = "https://api.themoviedb.org/3";
 
 // Function
-const fetchData = async (endpoint) => {
-  const req = await fetch(`${API_BASE}${endpoint}`);
+const fetchData = async (endpoint) => {  const req = await fetch(`${API_BASE}${endpoint}`);
   const json = await req.json();
   return json;
 };
@@ -74,6 +73,23 @@ const data = {
     }
 
     return movieInfo;
+  },
+  getSimilarTitles: async (movieId, type) => {
+    let similarTitles;
+
+    if (movieId) {
+      if (type === "movie") {
+        similarTitles = await fetchData(
+          `/movie/${movieId}/similar?api_key=${API_KEY}`
+        );
+      } else if (type === "tv") {
+        similarTitles = await fetchData(
+          `/tv/${movieId}/similar?api_key=${API_KEY}`
+        );
+      }
+    }
+
+    return similarTitles;
   },
 };
 
