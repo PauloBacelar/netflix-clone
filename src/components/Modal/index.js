@@ -1,7 +1,6 @@
 import "./Modal.css";
 
 const Modal = (props) => {
-  console.log(props);
   let genres = [];
   if (props.modalInfo.genres) {
     for (let genre of props.modalInfo.genres) {
@@ -17,13 +16,17 @@ const Modal = (props) => {
         <div className="modal__card">
           <div
             className="modal__image"
-            style={{
-              backgroundImage: `linear-gradient(to top, rgba(24, 24, 24), transparent 50%), url(
+            style={
+              props.modalInfo.backdrop_path
+                ? {
+                    backgroundImage: `linear-gradient(to top, rgba(24, 24, 24), transparent 50%), url(
                 https://image.tmdb.org/t/p/original${props.modalInfo.backdrop_path})`,
-            }}
+                  }
+                : null
+            }
           >
             <div className="modal__close" onClick={() => props.setModal(false)}>
-              <span class="material-icons">close</span>
+              <span className="material-icons">close</span>
             </div>
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.name}</h2>
