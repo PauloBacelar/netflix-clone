@@ -86,7 +86,23 @@ const Modal = (props) => {
                         ></div>
 
                         <div className="modal__grid-info">
-                          <p>{title.name}</p>
+                          <div className="modal__grid-title">
+                            <div className="modal__rating">
+                              <h4>
+                                {" "}
+                                {Math.round(props.modalInfo.vote_average * 10)}%
+                                match
+                              </h4>
+                            </div>
+                            <h4 className="modal__grid-name">{title.name}</h4>
+                          </div>
+                          <div className="modal__grid-description">
+                            <p>
+                              {title.overview.length > 15
+                                ? title.overview.substring(0, 140) + "..."
+                                : title.overview}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     );

@@ -133,7 +133,7 @@
 }
 
 .modal__related {
-  margin: 30px 50px;
+  margin: 30px 30px 30px 50px;
 }
 
 .modal__grid {
@@ -145,15 +145,32 @@
 .modal__grid-item {
   min-height: 220px;
   border-radius: 7.5px;
-  height: 50vh;
-  max-height: 340px;
+  height: 65vh;
+  max-height: 420px;
   background-color: #302c2c;
 }
 
 .modal__grid-img {
-  height: 55%;
+  height: 40%;
   width: 100%;
   border-radius: 7.5px;
+}
+
+.modal__grid-info {
+  margin-left: 15px;
+  height: 60%;
+}
+
+.modal__grid-name {
+  margin-top: -10px;
+}
+
+.modal__grid-description p {
+  margin-top: -10px;
+  color: #d2d2d2;
+  font-size: 14px;
+  line-height: 25px;
+  margin-right: 10px;
 }
 
 /* Media queries */
@@ -164,15 +181,18 @@
 
   .modal__grid-item {
     height: 80vh;
-    max-height: none;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 625px) {
   .modal__grid {
     grid-template-columns: 1fr;
   }
+}
 
+@media screen and (max-width: 350px) {
   .modal__grid-item {
+    height: 100vh;
+    max-height: 500px;
   }
 }
