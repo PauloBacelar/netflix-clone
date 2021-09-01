@@ -211,6 +211,24 @@
 }
 
 /* Media queries */
+@media screen and (max-width: 1024px) {
+  .modal__description {
+    margin-left: 30px;
+  }
+
+  .modal__details {
+    margin-left: 15px;
+  }
+
+  .modal__title-container {
+    left: 30px;
+  }
+
+  .modal__related {
+    margin: 30px;
+  }
+}
+
 @media screen and (max-height: 550px) {
   .modal__grid-item {
     min-height: 400px;
