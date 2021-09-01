@@ -182,6 +182,7 @@
 
 .modal__grid-name {
   margin-top: -10px;
+  margin-right: 10px;
 }
 
 .modal__grid-description p {
@@ -193,6 +194,12 @@
 }
 
 /* Media queries */
+@media screen and (max-height: 550px) {
+  .modal__grid-item {
+    min-height: 400px;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .modal__grid {
     grid-template-columns: 1fr 1fr;

@@ -28,6 +28,7 @@ const Modal = (props) => {
             <div className="modal__close" onClick={() => props.setModal(false)}>
               <span className="material-icons">close</span>
             </div>
+
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.name}</h2>
               <a href="/#" className="modal__button">
@@ -35,6 +36,7 @@ const Modal = (props) => {
               </a>
             </div>
           </div>
+
           <div className="modal__info">
             <div className="modal__details">
               <h3 className="modal__rating">
@@ -50,6 +52,7 @@ const Modal = (props) => {
                 {props.modalInfo.number_of_seasons !== 1 ? "s" : ""}
               </h3>
             </div>
+
             <div className="modal__description">
               <p>
                 {props.modalInfo.overview ? (
@@ -63,13 +66,13 @@ const Modal = (props) => {
               <p>Genres: {genres}</p>
             </div>
           </div>
+
           <div className="modal__related">
             <h2>Similar shows</h2>
 
             <div className="modal__grid">
               {props.similarTitles
                 ? props.similarTitles.results.map((title, key) => {
-                    console.log(title);
                     if (title.backdrop_path) {
                       return (
                         <div className="modal__grid-item" key={key}>
@@ -86,7 +89,9 @@ const Modal = (props) => {
                             }
                           >
                             <p className="modal__grid-year">
-                              {title.first_air_date.substring(0, 4)}
+                              {title.first_air_date !== undefined
+                                ? title.first_air_date.substring(0, 4)
+                                : ""}
                             </p>
                           </div>
 
@@ -111,6 +116,8 @@ const Modal = (props) => {
                         </div>
                       );
                     }
+
+                    return null;
                   })
                 : ""}
             </div>
@@ -132,6 +139,7 @@ const Modal = (props) => {
             <div className="modal__close" onClick={() => props.setModal(false)}>
               <span className="material-icons">close</span>
             </div>
+
             <div className="modal__title-container">
               <h2 className="modal__title">{props.modalInfo.title}</h2>
               <a href="/#" className="modal__button">
@@ -139,6 +147,7 @@ const Modal = (props) => {
               </a>
             </div>
           </div>
+
           <div className="modal__info">
             <div className="modal__details">
               <h3 className="modal__rating">
@@ -154,6 +163,7 @@ const Modal = (props) => {
                 {props.modalInfo.runtime % 60}min
               </h3>
             </div>
+
             <div className="modal__description">
               <p>
                 {props.modalInfo.overview ? (
@@ -165,6 +175,64 @@ const Modal = (props) => {
                 )}
               </p>
               <p>Genres: {genres}</p>
+            </div>
+          </div>
+
+          <div className="modal__related">
+            <h2>Similar shows</h2>
+
+            <div className="modal__grid">
+              {props.similarTitles
+                ? props.similarTitles.results.map((title, key) => {
+                    if (title.backdrop_path) {
+                      return (
+                        <div className="modal__grid-item" key={key}>
+                          <div
+                            className="modal__grid-img"
+                            style={
+                              title.backdrop_path
+                                ? {
+                                    backgroundImage: `url(https://image.tmdb.org/t/p/original${title.backdrop_path})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                  }
+                                : null
+                            }
+                          >
+                            <p className="modal__grid-year">
+                              {title.release_date !== undefined
+                                ? title.release_date.substring(0, 4)
+                                : ""}
+                            </p>
+                          </div>
+
+                          <div className="modal__grid-info">
+                            <div className="modal__grid-title">
+                              <div className="modal__rating">
+                                <h4>
+                                  {" "}
+                                  {Math.round(title.vote_average * 10)}% match
+                                </h4>
+                              </div>
+                              <h4 className="modal__grid-name">
+                                {title.title}
+                              </h4>
+                            </div>
+                            <div className="modal__grid-description">
+                              <p>
+                                {title.overview.length > 15
+                                  ? title.overview.substring(0, 140) + "..."
+                                  : title.overview}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    return null;
+                  })
+                : null}
             </div>
           </div>
         </div>
