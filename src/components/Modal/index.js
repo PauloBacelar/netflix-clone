@@ -1,4 +1,5 @@
 import "./Modal.css";
+import playButton from "../../images/play.png";
 
 const Modal = (props) => {
   let genres = [];
@@ -93,6 +94,9 @@ const Modal = (props) => {
                                 ? title.first_air_date.substring(0, 4)
                                 : ""}
                             </p>
+                            <div className="modal__grid-play">
+                              <img src={playButton} alt="" />
+                            </div>
                           </div>
 
                           <div className="modal__grid-info">
@@ -204,6 +208,9 @@ const Modal = (props) => {
                                 ? title.release_date.substring(0, 4)
                                 : ""}
                             </p>
+                            <div className="modal__grid-play">
+                              <img src={playButton} alt="" />
+                            </div>
                           </div>
 
                           <div className="modal__grid-info">

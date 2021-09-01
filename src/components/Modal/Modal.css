@@ -175,6 +175,21 @@
   transition: ease 0.25s;
 }
 
+.modal__grid-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__grid-play img {
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .modal__grid-info {
   margin-left: 15px;
   height: 60%;
