@@ -68,10 +68,26 @@ const Modal = (props) => {
 
             <div className="modal__grid">
               {props.similarTitles
-                ? props.similarTitles.results.map((title) => {
+                ? props.similarTitles.results.map((title, key) => {
+                    console.log(title);
                     return (
-                      <div className="modal__grid-item">
-                        <p>{title.name}</p>
+                      <div className="modal__grid-item" key={key}>
+                        <div
+                          className="modal__grid-img"
+                          style={
+                            title.backdrop_path
+                              ? {
+                                  backgroundImage: `url(https://image.tmdb.org/t/p/original${title.backdrop_path})`,
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center",
+                                }
+                              : null
+                          }
+                        ></div>
+
+                        <div className="modal__grid-info">
+                          <p>{title.name}</p>
+                        </div>
                       </div>
                     );
                   })

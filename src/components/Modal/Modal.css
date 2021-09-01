@@ -150,6 +150,12 @@
   background-color: #302c2c;
 }
 
+.modal__grid-img {
+  height: 55%;
+  width: 100%;
+  border-radius: 7.5px;
+}
+
 /* Media queries */
 @media screen and (max-width: 850px) {
   .modal__grid {
@@ -157,7 +163,8 @@
   }
 
   .modal__grid-item {
-    height: 62.5vh;
+    height: 80vh;
+    max-height: none;
   }
 }
 
@@ -167,6 +174,5 @@
   }
 
   .modal__grid-item {
-    max-height: none;
   }
 }
