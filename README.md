@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+<h4 align="center">
+  <img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/logo.png" alt="logo" height="75"/>
+</h4>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    🚀 UI Clone
+</h1>
 
-## Available Scripts
+<p align="center">Netflix UI clone website</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-deploy">Deploy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-prerequisites">Prerequisites</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Techonologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-### `npm start`
+<h3 align="center"> 
+🚧  Finished  🚧
+</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 📎 Features 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [x] Featured movie
+- [x] Netflix originals TV shows
+- [x] Movies by category: action, horror, comedy and romance
+- [x] Arrows for browsing through movies
+- [x] Information about selected movie, as well as similar movies/shows
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 💻 Project
 
-### `npm run build`
+UI Clone of Netflix's streaming service, using <a href="https://developers.themoviedb.org/3">The Movie Database API</a>.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🚀 Deploy 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is hosted on [Netlify](https://netflix-paulobacelar.netlify.app/).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### ✅ Demo
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/home.png" />
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/movie-rows.png" />
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/selected.png" />
+<div style="display: flex;">
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/home-mobile.png" width="200px" />
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/rows-mobile.png" width="200px" />
+<img src="https://github.com/PauloBacelar/netflix-clone/blob/main/src/images/selected-mobile.png" width="200px" />
+</div>
 
-### `npm run eject`
+### ⚙ Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Before starting, you'll need to have [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) or [Yarn](https://yarnpkg.com/).
+Also, an IDE is recommended for editing the code. I recommend [VSCode](https://code.visualstudio.com/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📗 Running the application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Clone this repository
+$ git clone https://github.com/PauloBacelar/netflix-clone
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Install the dependencies
+$ yarn or npm
 
-## Learn More
+# Run the application
+$ yarn or npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🚀 Technologies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project uses the following technologies:
 
-### Code Splitting
+- HTML
+- CSS
+- Javascript
+- React.js
+- Node
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### ⚖ Rights
 
-### Analyzing the Bundle Size
+All rights reserved to Netflix and The Movie Database.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 📝 License
 
-### Making a Progressive Web App
+This project is under MIT license.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<hr/>
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created by Paulo Bacelar.
