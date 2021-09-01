@@ -126,6 +126,7 @@
 
 .modal__close:hover {
   cursor: pointer;
+  background-color: #464646;
 }
 
 .material-icons {
