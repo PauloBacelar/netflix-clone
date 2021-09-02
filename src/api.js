@@ -1,9 +1,10 @@
 // Variables
-const API_KEY = "0bc68895ea9f1032d90f48de9946e3cf";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const API_BASE = "https://api.themoviedb.org/3";
 
 // Function
-const fetchData = async (endpoint) => {  const req = await fetch(`${API_BASE}${endpoint}`);
+const fetchData = async (endpoint) => {
+  const req = await fetch(`${API_BASE}${endpoint}`);
   const json = await req.json();
   return json;
 };
