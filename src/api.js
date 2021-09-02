@@ -1,5 +1,5 @@
 // Variables
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = "0bc68895ea9f1032d90f48de9946e3cf";
 const API_BASE = "https://api.themoviedb.org/3";
 
 // Function
