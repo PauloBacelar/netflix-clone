@@ -129,12 +129,11 @@ const App = () => {
       </section>
 
       {/* Loading screen */}
-      {!movieList.length ||
-        (!featuredMovie && (
-          <main className="loader">
-            <Loader type="TailSpin" color="#E50914" height={100} width={100} />
-          </main>
-        ))}
+      {(!movieList.length || !featuredMovie) && (
+        <main className="loader">
+          <Loader type="TailSpin" color="#E50914" height={100} width={100} />
+        </main>
+      )}
     </div>
   );
 };
