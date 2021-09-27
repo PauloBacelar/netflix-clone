@@ -6,6 +6,7 @@ import MovieRow from "./components/MovieRow";
 import FeaturedMovie from "./components/FeaturedMovie";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import Loader from "react-loader-spinner";
 
 // Component
 const App = () => {
@@ -96,22 +97,21 @@ const App = () => {
   // JSX
   return (
     <div className="page">
-      {modal && modalMovieInfo ? (
+      {modal && modalMovieInfo && (
         <Modal
           modalInfo={modalMovieInfo}
           showType={modalMovieId[1]}
           setModal={setModal}
           similarTitles={similarTitles}
         />
-      ) : null}
+      )}
+
       {/* Header */}
       <Header black={blackHeader} />
+
       {/* Featured movie */}
-      {featuredMovie ? (
-        <FeaturedMovie featuredData={featuredMovie} />
-      ) : (
-        "Loading"
-      )}
+      {featuredMovie && <FeaturedMovie featuredData={featuredMovie} />}
+
       {/* Lists of movies */}
       <section className="lists">
         {movieList.map((list, key) => {
@@ -127,13 +127,14 @@ const App = () => {
           );
         })}
       </section>
-      {/* Footer */}
-      <section className="footer"></section>
-      {movieList.length === 0 || !featuredMovie ? (
-        <div className="loading"></div>
-      ) : (
-        ""
-      )}
+
+      {/* Loading screen */}
+      {!movieList.length ||
+        (!featuredMovie && (
+          <main className="loader">
+            <Loader type="TailSpin" color="#E50914" height={100} width={100} />
+          </main>
+        ))}
     </div>
   );
 };
