@@ -37,13 +37,13 @@ body.modal-active {
 }
 
 .loader {
-  height: 100vh;
+  height: calc(100vh - 150px);
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 0;
+  top: 70px;
   left: 0;
 }
 
