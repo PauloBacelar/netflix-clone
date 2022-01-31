@@ -58,11 +58,14 @@ Also, an IDE is recommended for editing the code. I recommend [VSCode](https://c
 # Clone this repository
 $ git clone https://github.com/PauloBacelar/netflix-clone
 
+# Enter on netflix-clone folder
+$ cd netflix-clone
+
 # Install the dependencies
-$ yarn or npm
+$ npm install
 
 # Run the application
-$ yarn or npm start
+$ npm start
 ```
 
 ### 🚀 Technologies
